@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+#!/usr/bin/python
+
 import os
 import collections
 
@@ -127,7 +128,27 @@ class BinaryTree():
 	def build_from_inorder_postorder(self, inorder, postorder):
 		self.root = self._build_from_inorder_postorder(inorder, 
 				postorder, 0, len(inorder), 0, len(postorder))
-		
+	
+	def print_top_view(self):
+		topView = {}
+		queue = collections.deque()
+		queue.append((self.root, 0))
+
+		while len(queue):
+			(node, dist) = queue.popleft()
+			if dist not in topView:
+				topView[dist] = node.val
+			if node.left:
+				queue.append((node.left, dist-1))
+			if node.right:
+				queue.append((node.right, dist+1))
+		print("TopView:")
+		for i in sorted(topView.keys()):
+			print("%d "%topView[i], end="")
+		print("")
+
+			
+	
 
 if __name__ == "__main__":
 	b = Node(1)
@@ -139,8 +160,8 @@ if __name__ == "__main__":
 	b.right.right = Node(7)
 
 	tree = BinaryTree()
-	#tree.build_from_inorder_preorder([4,2,5,1,6,3,7],[1,2,4,5,3,6,7])
-	tree.build_from_inorder_postorder([2,5,1,6,3,7],[5,2,6,7,3,1])
+	tree.build_from_inorder_preorder([4,2,5,1,6,3,7],[1,2,4,5,3,6,7])
+	#tree.build_from_inorder_postorder([2,5,1,6,3,7],[5,2,6,7,3,1])
 	tree.in_order()
 
 
@@ -153,5 +174,15 @@ if __name__ == "__main__":
 	tree.dfs()
 	tree.bfs()
 
+	tree.print_top_view()
 
-		
+	b=Node(1)
+	b.left = Node(2)
+	b.right = Node(3)
+	b.left.right = Node(4)
+	b.left.right.right = Node(5)
+	b.left.right.right.right= Node(6)
+
+	tree = BinaryTree(b)
+	tree.print_top_view()
+
