@@ -2,7 +2,7 @@
 
 import os
 import collections
-
+import sys
 
 class Node():
 	def __init__(self, val):
@@ -147,8 +147,55 @@ class BinaryTree():
 			print("%d "%topView[i], end="")
 		print("")
 
-			
-	
+
+	def _print_left_view(cls, node, maxDistance, currDistance):
+		if not node:
+			return
+		if currDistance > maxDistance[0]:
+			print("%d "%node.val, end="")
+			maxDistance[0] = currDistance
+		cls._print_left_view(node.left, maxDistance, currDistance+1)			
+		cls._print_left_view(node.right, maxDistance, currDistance+1)			
+
+	def print_left_view(self):
+		print("LeftView:")
+		self._print_left_view(self.root, [-1], 0)
+		print("")
+
+
+	def _least_common_ancester(cls, node, state):
+		
+		canBeParent = False
+
+		if not node:
+			return
+		if not state["n1Found"] and not state["n2Found"]:
+			canBeParent = True
+		if state["n1"] == node.val:
+			state["n1Found"] = True
+		elif state["n2"] == node.val:
+			state["n2Found"] = True
+
+		cls._least_common_ancester(node.left, state)
+		cls._least_common_ancester(node.right, state)
+
+		if state["n1Found"] and state["n2Found"] and canBeParent and not state["lca"]:
+			state["lca"] = node
+		return
+
+	def least_common_ancester(self, n1, n2):
+		state = {}
+		state["n1Found"] = False
+		state["n2Found"] = False
+		state["n1"] = n1
+		state["n2"] = n2
+		state["lca"] = None
+		self._least_common_ancester(self.root, state)
+		if state["lca"]:
+			print("Least Common Ancester %d"% state["lca"].val)
+		else:
+			print("No Least Common Ancester")
+
 
 if __name__ == "__main__":
 	b = Node(1)
@@ -162,6 +209,12 @@ if __name__ == "__main__":
 	tree = BinaryTree()
 	tree.build_from_inorder_preorder([4,2,5,1,6,3,7],[1,2,4,5,3,6,7])
 	#tree.build_from_inorder_postorder([2,5,1,6,3,7],[5,2,6,7,3,1])
+
+
+	tree.least_common_ancester(3, 2)
+
+
+	sys.exit(1)
 	tree.in_order()
 
 
@@ -175,6 +228,8 @@ if __name__ == "__main__":
 	tree.bfs()
 
 	tree.print_top_view()
+	tree.print_left_view()
+
 
 	b=Node(1)
 	b.left = Node(2)
@@ -185,4 +240,6 @@ if __name__ == "__main__":
 
 	tree = BinaryTree(b)
 	tree.print_top_view()
+
+	tree.print_left_view()
 
