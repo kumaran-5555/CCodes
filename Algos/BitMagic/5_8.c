@@ -97,7 +97,7 @@ int main()
 
 	char *c= (char *)calloc(50, sizeof(char));
 	printScreen(c, 10, 5);
-	horizontalLine(c, 10, 5, 2, 18, 0);
+	horizontalLine(c, 10, 5, 2, 18, 3);
 	printScreen(c, 10, 5);
 
 
