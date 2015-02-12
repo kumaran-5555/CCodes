@@ -11,7 +11,7 @@ def isValidMove(board, row, col, size):
 	
 	# check for col intersect
 	for i in range(0, row):
-		if board[i][col] == 1:
+		if board[i][col] == 'Q':
 			return False
 	
 
@@ -20,7 +20,7 @@ def isValidMove(board, row, col, size):
 	for i in range(col+1, size):
 		if j < 0:
 			break
-		if board[j][i] == 1:
+		if board[j][i] == 'Q':
 			return False
 		j-=1
 
@@ -29,7 +29,7 @@ def isValidMove(board, row, col, size):
 	for i in range(col-1, -1, -1):
 		if j < 0:
 			break
-		if board[j][i] == 1:
+		if board[j][i] == 'Q':
 			return False
 
 		j-=1
@@ -38,6 +38,7 @@ def isValidMove(board, row, col, size):
 
 
 def printBoard(board, size):
+	pass
 
 	print("---------solution-----------")
 	for i in range(size):
@@ -45,26 +46,29 @@ def printBoard(board, size):
 	print("-----end solution-----------")
 
 
-def queenProblem(board, currRow, size):
+def queenProblem(board, currRow, size, output):
 	if currRow == size:
 		printBoard(board, size)
+		output.append(board[:])
 		return
 
 	for i in range(0, size):
 		if isValidMove(board, currRow, i, size):
-			board[currRow][i] = 1
-			queenProblem(board, currRow+1, size)
-			board[currRow][i] = 0
+			board[currRow][i] = 'Q'
+			queenProblem(board, currRow+1, size, output)
+			board[currRow][i] = '.'
 
 
 
 if __name__== "__main__":
 	board = []
-	size = 11
+	size = 4
 	for i in range(size):
-		board.append([0]*size)
+		board.append(['.']*size)
 	#printBoard(board, size)
 
-	queenProblem(board, 0, size)
+	output = []
+	queenProblem(board, 0, size, output)
+	print(output)
 
 		
