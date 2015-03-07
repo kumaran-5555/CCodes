@@ -5,6 +5,7 @@
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/mman.h>
 
 
 
@@ -22,27 +23,66 @@
 
 int main(int argc, char *argv[])
 {
+	
+	int isEvenToOddFlag;
+	int fd, sts;
+	int *val;
+	struct flock flk;
+	int currVal;
+	flk.l_type = F_WRLCK;
+	flk.l_whence = SEEK_SET;
+	flk.l_start = 0;
+	flk.l_len = sizeof(*val);
+	
+		
 	if (argc != 2)
 	{
 		printf("Usage: %s <isEvenToOddFlag>\n", argv[0]);
 		exit(1);
 	}
-	int isEvenToOddFlag = atoi(argv[1]);
-	int fd, val, sts;
-		
+	isEvenToOddFlag = atoi(argv[1]);
 	fd = shm_open("/newshmem", O_CREAT|O_RDWR, S_IRWXU);
 	if (fd < 0)
 	{
 		perror("shm_open()");
 		exit(1);
 	}
-	ftruncate(fd, sizeof(val));
-		
-	
-	
-	
+	ftruncate(fd, sizeof(*val));
+	// map the shared memory region
+	val = mmap(NULL, sizeof(*val), PROT_WRITE, MAP_SHARED, fd, 0);
+	if(!val)
+	{
+		perror("mmap()");
+		exit(0);
+	}	
 
-	
+	while(1)
+	{ 
+		
+		flk.l_type = F_WRLCK;
+		// get write lock and if val is not even increment
+		fcntl(fd, F_SETLKW, flk);
+		// skkipping error handling
+		if((*val)%2 == 0 && isEvenToOddFlag)
+		{
+			// it is even, modify it
+			*val = *val + 1;
+		}
+		else if((*val)%2== 1 && !isEvenToOddFlag)
+		{
+			*val = *val + 1;
+		}
+		currVal = *val;	
+		flk.l_type = F_UNLCK;
+		// unlock
+		fcntl(fd, F_SETLKW, flk);
+		// see if we are done
+		if (currVal >= 100)
+		{
+			printf("%d reached %d\n", getpid(), currVal);
+			break;
+		}
+	}
 	
 	close(fd);
 	shm_unlink("/newshmem");	
