@@ -9,7 +9,7 @@ class Node():
 
 class Solution():
 
-    def nextSmall(self, heap, lists, heap):
+    def nextSmall(self, lists, heap):
 
         minHeapNode = heapq.heappop(heap)
         if not minHeapNode:
@@ -42,7 +42,7 @@ class Solution():
         k = len(lists)
         heap = self.initializeHeap(lists, k)
         while True:
-            node = self.nextSmall(lists, k, heap)
+            node = self.nextSmall(lists, heap)
             if not node:
                 break
             if not head:
