@@ -43,7 +43,45 @@ def generate_permutation(listOfAlphabets):
 
     return output
 
+class Solution:
+    # @param num, a list of integer
+    # @return a list of lists of integers
+    def permute(self, num):
+        output = []
+        sortedNum = sorted(num)
+        l = len(num)
+        output.append(sortedNum[:])
+
+        while True:
+            k = None
+            for i in range(l-1):
+                if sortedNum[i] < sortedNum[i+1]:
+                    k = i
+            if k is None:
+                # we are done
+                break
+
+            # find largest m such that sortedNum[k] < sortedNum[m]
+            for i in range(k+1,l):
+                if sortedNum[k] < sortedNum[i]:
+                    m = i
+
+            # swap k and m
+            temp = sortedNum[k]
+            sortedNum[k] = sortedNum[m]
+            sortedNum[m] = temp
+
+            # revesr sortedNum[k+1:]
+            sortedNum = sortedNum[:k+1] + sorted(sortedNum[k+1:], reverse=False)
+
+            output.append(sortedNum[:])
+
+        return output
+
+
 
 if __name__ == "__main__":
-    print(generate_permutation(['foo', 'bar', 'hhh', 'aaa']))
+    #print(generate_permutation(['foo', 'bar', 'hhh', 'aaa']))
+    s = Solution()
+    print(s.permute([1,1,2]))
 
