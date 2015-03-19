@@ -58,53 +58,53 @@ int main(int argc, char *argv[])
 	for(i=0; i<50; i++)
 	{
 	
-	ipHdr = (struct iphdr *)request;
-	icmpHdr = (struct icmphdr *)(request + sizeof(struct iphdr));
-	
-	ipHdr->version = 4;
-	ipHdr->ihl = sizeof(struct iphdr) >> 2;
-	ipHdr->tos = 0;
-	ipHdr->tot_len = htons(28);
-	ipHdr->id = htons(0);
-	ipHdr->frag_off = 0;
-	ipHdr->ttl = 44;
-	ipHdr->protocol = IPPROTO_ICMP;
-	inet_pton(AF_INET, argv[1], &(ipHdr->saddr));
+		ipHdr = (struct iphdr *)request;
+		icmpHdr = (struct icmphdr *)(request + sizeof(struct iphdr));
+		
+		ipHdr->version = 4;
+		ipHdr->ihl = sizeof(struct iphdr) >> 2;
+		ipHdr->tos = 0;
+		ipHdr->tot_len = htons(28);
+		ipHdr->id = htons(0);
+		ipHdr->frag_off = 0;
+		ipHdr->ttl = 44;
+		ipHdr->protocol = IPPROTO_ICMP;
+		inet_pton(AF_INET, argv[1], &(ipHdr->saddr));
 
 
-	inet_pton(AF_INET, argv[2], &(ipHdr->daddr));
-	ipHdr->check = 0;
-	ipHdr->check = in_cksum(ipHdr, sizeof(struct iphdr));
+		inet_pton(AF_INET, argv[2], &(ipHdr->daddr));
+		ipHdr->check = 0;
+		ipHdr->check = in_cksum(ipHdr, sizeof(struct iphdr));
 
-	icmpHdr->type = 8;
-	icmpHdr->code = 0;
-	icmpHdr->un.echo.id = i;
-	icmpHdr->un.echo.sequence = i;
-	icmpHdr->checksum = 0;
-	icmpHdr->checksum = in_cksum(icmpHdr, sizeof(struct icmphdr));
+		icmpHdr->type = 8;
+		icmpHdr->code = 0;
+		icmpHdr->un.echo.id = i;
+		icmpHdr->un.echo.sequence = i;
+		icmpHdr->checksum = 0;
+		icmpHdr->checksum = in_cksum(icmpHdr, sizeof(struct icmphdr));
 
 
-	sts = sendto(socketFd, request, sizeof(struct iphdr) + sizeof(struct icmphdr), 0, &peerAddr, peerAddrLen);
+		sts = sendto(socketFd, request, sizeof(struct iphdr) + sizeof(struct icmphdr), 0, &peerAddr, peerAddrLen);
 
-	if(sts < 0)
-	{
-		perror("sendto()");
-		exit(2);
-	}
-	printf("pinged %s with id %hx\n",argv[2], i);
-	
-	sts = recvfrom(socketFd, response, sizeof(struct iphdr) + sizeof(struct icmphdr), 0, &peerAddr, &peerAddrLen);
-	if(sts < 0)
-	{
-		perror("recvfrom()");	
-		exit(2);
-	}
+		if(sts < 0)
+		{
+			perror("sendto()");
+			exit(2);
+		}
+		printf("pinged %s with id %hx\n",argv[2], i);
+		
+		sts = recvfrom(socketFd, response, sizeof(struct iphdr) + sizeof(struct icmphdr), 0, &peerAddr, &peerAddrLen);
+		if(sts < 0)
+		{
+			perror("recvfrom()");	
+			exit(2);
+		}
 
-	ipHdr = (struct iphdr *)response;
-	icmpHdr = response + sizeof(struct iphdr);
-	char buf[255];
-	inet_ntop(AF_INET, &ipHdr->saddr, buf, 255);
-	printf("%s replied %hx\n", buf, icmpHdr->un.echo.id);
+		ipHdr = (struct iphdr *)response;
+		icmpHdr = response + sizeof(struct iphdr);
+		char buf[255];
+		inet_ntop(AF_INET, &ipHdr->saddr, buf, 255);
+		printf("%s replied %hx\n", buf, icmpHdr->un.echo.id);
 
 	}	
 	
