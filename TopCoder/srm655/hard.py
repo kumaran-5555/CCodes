@@ -3,9 +3,9 @@ __author__ = 'serajago'
 from collections import defaultdict
 class NineEasy:
 
-    def  _count(self, sums, digitPos, sum2):
-        print(sums, digitPos, self.numDigits)
-        key = "_".join([str(i) for i in  sums])+"_"+str(digitPos)
+    def  _count(self, sums, digitPos):
+        #print(sums, digitPos, self.numDigits)
+        key = tuple(sums+ [digitPos])
         if key in self.dpTable:
 
             return self.dpTable[key]
@@ -20,7 +20,6 @@ class NineEasy:
         for i in range(0,10):
             # update sums for each question
             newSums = sums[:]
-            newSum2 = 0
             for j in range(self.N):
                 if self.d[digitPos] & (1<<j):
                     newSums[j] = (newSums[j] + i) % 9
@@ -45,12 +44,12 @@ class NineEasy:
         self.mod = 1000000007
         sums = [0] * (self.N)
         self._count(sums, 0)
-        print(self.dpTable)
-        return  self.dpTable["_".join(["0"]*(self.N+1))]
+        #print(self.dpTable)
+        return  self.dpTable[tuple([0]*(N+1))]
 
 
 
 
 if __name__ == '__main__':
     s = NineEasy()
-    print(s.count(1,[0,0,1]))
+    print(s.count(5,[1,2,4,8,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]))
