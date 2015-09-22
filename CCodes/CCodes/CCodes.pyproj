@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>0237ddc9-7614-47a1-9eaa-8f0c10d595f3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>CCodes.py</StartupFile>
+    <StartupFile>Algos2\Sorting\MergeSort.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Algos2\Sorting\MergeSort.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Algos\Backtracking\digitSequence.py" />
     <Compile Include="Algos\Backtracking\SudokuSolver.py" />
     <Compile Include="Algos\Backtracking\ValidSudoku.py" />
@@ -127,6 +130,7 @@
     <Compile Include="TopCoder\srm656\medium.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Algos2\Sorting\" />
     <Folder Include="Algos\" />
     <Folder Include="Algos\Backtracking\" />
     <Folder Include="Algos\BitMagic\" />
@@ -148,6 +152,7 @@
     <Folder Include="Algos\Systems\" />
     <Folder Include="Algos\Trees\" />
     <Folder Include="Algos\Trees\__pycache__\" />
+    <Folder Include="Algos2\" />
     <Folder Include="Systems\" />
     <Folder Include="Systems\experiments\" />
     <Folder Include="Systems\fs\" />
