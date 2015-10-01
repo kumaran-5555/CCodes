@@ -1,3 +1,10 @@
+class TreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -123,6 +130,61 @@ class BinaryTree:
 
 
 
+    
 
 
+
+
+class Helpers(object):
+    def inOrderSuccessor(self,node):
+    
+        if node.right is None:
+            return None
+
+        temp = node.right
+
+
+
+        while temp.left and temp.left != node:
+            temp = temp.left
+
+        return temp
+
+
+    def inOrderPredecessor(self, node):
+        if node.left is None:
+            return None
+
+        temp = node.left
+
+        while temp.right and temp.right != node:
+            temp = temp.right
+
+        return temp
+
+
+
+
+
+
+
+
+
+
+        
+        
+
+
+
+if __name__ == '__main__':
+    s = Solution_105()
+    t1 = s.buildTree( [4,2,1,3,6,5,7], [1,2,3,4,5,6,7])
+
+
+
+    print(t)
+
+
+
+    
 

@@ -1,4 +1,4 @@
-import sys
+﻿import sys
 
 
 class BinarySearch:
@@ -69,6 +69,9 @@ class BinarySearch:
             return start
         
         return -1
+
+
+
 
      
 

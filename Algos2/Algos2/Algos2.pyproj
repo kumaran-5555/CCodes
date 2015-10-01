@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f9bd6aac-1252-4787-a97d-7a00a3a0ee98</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>CTCI_E5\Chapter_2.py</StartupFile>
+    <StartupFile>LC\1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -26,6 +26,9 @@
     <Compile Include="BinarySearch\BinarySearch.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BinaryTree\BinaryTree.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="CTCI_E5\Chapter_1.py">
       <SubType>Code</SubType>
     </Compile>
@@ -33,6 +36,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CTCI_E5\__init__.py" />
+    <Compile Include="LC\1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\105.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\106.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LinkedList\LinkedList.py">
       <SubType>Code</SubType>
     </Compile>
@@ -48,12 +60,15 @@
     <Compile Include="Sorting\QuickSort.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BinaryTree\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BinarySearch\" />
     <Folder Include="CTCI_E5\" />
     <Folder Include="LinkedList\" />
+    <Folder Include="LC\" />
     <Folder Include="Sorting\" />
+    <Folder Include="BinaryTree\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
