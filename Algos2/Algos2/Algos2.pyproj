@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f9bd6aac-1252-4787-a97d-7a00a3a0ee98</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>LC\275.py</StartupFile>
+    <StartupFile>LC\9.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -81,6 +81,12 @@
     <Compile Include="LC\24.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\26.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\27.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\274.py">
       <SubType>Code</SubType>
     </Compile>
@@ -88,6 +94,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\3.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\4.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\5.py">
@@ -100,6 +109,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\7.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\9.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LinkedList\LinkedList.py">
