@@ -1,4 +1,4 @@
-# Definition for singly-linked list.
+﻿# Definition for singly-linked list.
 # class ListNode(object):
 #     def __init__(self, x):
 #         self.val = x
@@ -25,9 +25,16 @@ class Solution(object):
         while temp:
 
             if count % k == 0 and tempHead is not None:
-                # add this temporary list to permenant
-                newTail.next = tempHead
-                newTail = tempTail
+
+                if newTail:
+                    # add this temporary list to permenant
+                    newTail.next = tempHead
+                    newTail = tempTail
+
+                else:
+                    newTail = tempTail
+                    newHead = tempHead
+
 
                 tempHead = None
                 tempTail = None
@@ -41,13 +48,30 @@ class Solution(object):
                 tempTail = temp
 
             temp = next
-
-
+        
         if tempTail:
             tempTail.next = None
 
+        if count % k == 0 and tempHead is not None:
 
-        if count % k > 0:
+            if newTail:
+                # add this temporary list to permenant
+                newTail.next = tempHead
+                newTail = tempTail
+
+            else:
+                newTail = tempTail
+                newHead = tempHead
+
+
+            tempHead = None
+            tempTail = None
+
+
+
+
+
+        elif count % k > 0:
             #we have  partial list, reverse that and add to permenant
 
             temp = tempHead
