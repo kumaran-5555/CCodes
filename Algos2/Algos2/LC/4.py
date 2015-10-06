@@ -1,4 +1,4 @@
-class Solution(object):
+﻿class Solution(object):
 
     def hasMedian(self, l1, l2):
         # we will search for median in l1

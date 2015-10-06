@@ -1,4 +1,4 @@
-class Solution(object):
+﻿class Solution(object):
 
     def hash(self, s, start, end):
         prime = 101
