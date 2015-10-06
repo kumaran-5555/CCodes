@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f9bd6aac-1252-4787-a97d-7a00a3a0ee98</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>LC\283.py</StartupFile>
+    <StartupFile>LC\287.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -81,6 +81,7 @@
     <Compile Include="LC\24.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\25.py" />
     <Compile Include="LC\26.py">
       <SubType>Code</SubType>
     </Compile>
@@ -96,15 +97,21 @@
     <Compile Include="LC\275.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\278.py" />
     <Compile Include="LC\28.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\283.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\284.py" />
+    <Compile Include="LC\287.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\289.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\290.py" />
     <Compile Include="LC\3.py">
       <SubType>Code</SubType>
     </Compile>
@@ -126,15 +133,20 @@
     <Compile Include="LC\36.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\37.py" />
     <Compile Include="LC\38.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\39.py" />
     <Compile Include="LC\4.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\40.py" />
+    <Compile Include="LC\48.py" />
     <Compile Include="LC\5.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\50.py" />
     <Compile Include="LC\6.py">
       <SubType>Code</SubType>
     </Compile>
@@ -144,6 +156,7 @@
     <Compile Include="LC\7.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\81.py" />
     <Compile Include="LC\9.py">
       <SubType>Code</SubType>
     </Compile>
