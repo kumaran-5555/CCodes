@@ -1,20 +1,21 @@
-class Solution(object):
+﻿class Solution(object):
     def containsNearbyDuplicate(self, nums, k):
         """
         :type nums: List[int]
         :type k: int
         :rtype: bool
         """
-        n = len(nums)
+        
+        nums = sorted(zip(nums, range(len(nums))))
 
-        for i in range(n-1):
-            j = 1
-            while j <= k and j < n:
-                if nums[i] == nums[i+j]:
-                    return True
+        for i in range(len(nums)-1):
+            if nums[i][0] == nums[i+1][0] and nums[i+1][1] - nums[i][1] <= k:
+                return True
 
-                j += 1
 
         return False
+
+
+
 
 
