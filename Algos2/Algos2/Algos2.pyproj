@@ -86,9 +86,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\25.py" />
+    <Compile Include="LC\257.py" />
+    <Compile Include="LC\258.py" />
     <Compile Include="LC\26.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\260.py" />
     <Compile Include="LC\263.py">
       <SubType>Code</SubType>
     </Compile>
