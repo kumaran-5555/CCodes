@@ -11,6 +11,8 @@ class Solution(object):
 
         if node.left is None and node.right is None:
             self.total += (subTotal * 10 + node.val)
+            return
+
 
 
         if node.left:
