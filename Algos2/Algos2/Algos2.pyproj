@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f9bd6aac-1252-4787-a97d-7a00a3a0ee98</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>LC\221.py</StartupFile>
+    <StartupFile>LC\224.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -45,6 +45,22 @@
     <Compile Include="LC\106.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\111.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\112.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\113.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\125.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\128.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\129.py" />
     <Compile Include="LC\14.py">
       <SubType>Code</SubType>
     </Compile>
@@ -54,42 +70,96 @@
     <Compile Include="LC\16.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\169.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\17.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\179.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\18.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\187.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\189.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\19.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\190.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\191.py" />
+    <Compile Include="LC\198.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\199.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\2.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\20.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\200.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\202.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\208.py" />
     <Compile Include="LC\21.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\215.py" />
     <Compile Include="LC\217.py" />
     <Compile Include="LC\219.py" />
     <Compile Include="LC\22.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\220.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\221.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\224.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\225.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\226.py" />
+    <Compile Include="LC\228.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\229.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\23.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\230.py" />
     <Compile Include="LC\231.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\232.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\233.py" />
+    <Compile Include="LC\234.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\235.py" />
+    <Compile Include="LC\236.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\237.py" />
     <Compile Include="LC\238.py" />
     <Compile Include="LC\239.py" />
@@ -197,8 +267,14 @@
     <Compile Include="LC\7.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\78.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\81.py" />
     <Compile Include="LC\9.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\90.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LinkedList\LinkedList.py">
