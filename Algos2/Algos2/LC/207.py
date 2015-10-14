@@ -1,33 +1,28 @@
 from collections import defaultdict
 
-
 class Solution(object):
 
-    def dfsCycleDetection(self, node):
-        flags = {}
+    def dfsCycleDetectionDirected(self, node):
 
-        stack = []
+        # start exploring node
+        self.colors[node] = 'Gray'
 
         if node not in self.edges:
-            # don't have any edges, can't have cycle
-            return False
+            # no neighbours, done exploring
+            self.colors[node] = 'Black'
+            return
 
-        stack.append(node)
+        for e in self.edges[node]:
+            if self.colors[e] == 'White':
+                self.dfsCycleDetectionDirected(e)
+            elif self.colors[e] == 'Gray':
+                # back edge
+                self.hasCycle = True
 
-        while len(stack):
-            n = stack.pop()
-
-            for e in self.edges[n]:                
-                if e in flags:
-                    return True
-
-                stack.append(e)
-                flags[e] = 1
+        # done exploring
+        self.colors[node] = 'Black'
 
 
-        return False
-
-    
     def canFinish(self, numCourses, prerequisites):
         """
         :type numCourses: int
@@ -35,21 +30,27 @@ class Solution(object):
         :rtype: bool
         """
 
+        
+        self.hasCycle = False
+
+        self.colors = {}
         self.edges = defaultdict(list)
 
         for i in range(numCourses):
-            self.edges[i] = []
+            self.colors[i] = 'White'
+
         for i in prerequisites:
             self.edges[i[0]].append(i[1])
 
-
-        for e in self.edges:
-            if self.dfsCycleDetection(e):
-                # cycle found
+        for i in range(numCourses):
+            self.dfsCycleDetectionDirected(i)
+            if self.hasCycle:
                 return False
 
         return True
 
 
-
+if __name__ == '__main__':
+    s = Solution()
+    s.canFinish(7, [])
 
