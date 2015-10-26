@@ -1,4 +1,4 @@
-class Solution(object):
+﻿class Solution(object):
     def calculate(self, s):
         """
         :type s: str
@@ -17,41 +17,83 @@ class Solution(object):
 
 
         s = s.replace(' ','')
-        s = s.replace(')','')
-        s = s.replace('(', '')
-
+        
         n = len(s)
         if n == 0:
             return 0
 
-        for i in range(1, n):
-            if s[i] == '+' or s[i]  == '-':
-                expression.append(s[start:i])
-                
-                if s[i] == '+' or  s[i] == '-':
-                    expression.append(s[i])
+        temp = ''
+        for c in s:
+            if c == '+' or c == '-' or c == ')' or c == '(':
+                if temp != '':
+                    expression.append(int(temp))
+                    temp = ''
+                expression.append(c)
+            else:
+                temp += c
 
-                start = i+1
-        expression.append(s[start:])
-        total = int(expression[0])
-        n = len(expression)
-        i = 1
+        if temp != '':
+            expression.append(int(temp))
 
-        while i < n:
-            if expression[i] == '+':
-                total += int(expression[i+1])
-                i += 2
-            elif expression[i] == '-':
-                total -= int(expression[i+1])
-                i += 2
 
-        return total
+
+        stack = []
+
+
+
+        for e in expression:
+            if e == '(':
+                stack.append(e)
+                continue
+
+            elif e == '+' or e == '-':
+                stack.append(e)
+
+            elif e == ')':
+
+                num = stack.pop()
+
+                open = stack.pop()
+
+                # check for operator
+                if len(stack):
+                    operator = stack.pop()
+                    lh = stack.pop()
+
+                    if operator == '+':
+                        stack.append(num + lh)
+                    else:
+                        stack.append(lh - num)
+                else:
+                    stack.append(num)
+
+                                  
+
+
+
+            else:
+                if len(stack) and stack[-1] != '(':
+                    operator = stack.pop()
+                    lh = stack.pop()
+
+                    if operator == '+':
+                        stack.append(e + lh)
+                    else:
+                        stack.append(lh - e)
+
+                else:
+                    stack.append(e)
+
+
+
+        return stack[-1]
+
 
 
 
 if __name__ == '__main__':
     s = Solution()
-    s.calculate("      ")
+    s.calculate("1 + 1")
 
 
 

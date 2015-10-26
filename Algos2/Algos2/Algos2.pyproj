@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f9bd6aac-1252-4787-a97d-7a00a3a0ee98</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>LC\110.py</StartupFile>
+    <StartupFile>LC\135.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -35,14 +35,26 @@
     <Compile Include="CTCI_E5\Chapter_2.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CTCI_E5\maxNDCG.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="CTCI_E5\__init__.py" />
     <Compile Include="LC\1.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\10.py" />
+    <Compile Include="LC\100.py" />
+    <Compile Include="LC\101.py" />
     <Compile Include="LC\105.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\106.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\108.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\109.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\110.py">
@@ -57,6 +69,20 @@
     <Compile Include="LC\113.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\114.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\116.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\117.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\118.py" />
+    <Compile Include="LC\120.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\124.py" />
     <Compile Include="LC\125.py">
       <SubType>Code</SubType>
     </Compile>
@@ -64,19 +90,56 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\129.py" />
+    <Compile Include="LC\130.py" />
+    <Compile Include="LC\134.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\135.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\14.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\147.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\148.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\15.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\150.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\151.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\152.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\155.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\16.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\168.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\169.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\17.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\171.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\172.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\174.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\179.py">
@@ -113,17 +176,37 @@
     <Compile Include="LC\200.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\201.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\202.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\204.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\206.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\207.py" />
     <Compile Include="LC\208.py" />
+    <Compile Include="LC\209.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\21.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\210.py" />
+    <Compile Include="LC\211.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\212.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\215.py" />
+    <Compile Include="LC\216.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\217.py" />
     <Compile Include="LC\219.py" />
     <Compile Include="LC\22.py">
@@ -133,6 +216,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\221.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\222.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\223.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\224.py">
@@ -168,7 +257,9 @@
     </Compile>
     <Compile Include="LC\237.py" />
     <Compile Include="LC\238.py" />
-    <Compile Include="LC\239.py" />
+    <Compile Include="LC\239.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\24.py">
       <SubType>Code</SubType>
     </Compile>
@@ -208,6 +299,7 @@
     <Compile Include="LC\27.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\272.py" />
     <Compile Include="LC\274.py">
       <SubType>Code</SubType>
     </Compile>
@@ -238,6 +330,9 @@
     <Compile Include="LC\31.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\32.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\33.py">
       <SubType>Code</SubType>
     </Compile>
@@ -259,24 +354,71 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\40.py" />
+    <Compile Include="LC\42.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\44.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\45.py" />
     <Compile Include="LC\48.py" />
     <Compile Include="LC\5.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\50.py" />
+    <Compile Include="LC\53.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\55.py" />
+    <Compile Include="LC\57.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\6.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LC\11.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\62.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\63.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\64.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\66.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\69.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\7.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\70.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\71.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\72.py" />
+    <Compile Include="LC\74.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\75.py" />
     <Compile Include="LC\78.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LC\79.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LC\81.py" />
+    <Compile Include="LC\84.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LC\85.py" />
     <Compile Include="LC\9.py">
       <SubType>Code</SubType>
     </Compile>
