@@ -5,7 +5,7 @@ class Solution(object):
         :type cost: List[int]
         :rtype: int
         """
-        
+
         start = 0
 
         n = len(gas)
@@ -42,3 +42,6 @@ class Solution(object):
 
 
 
+=======
+        
+>>>>>>> origin/master
