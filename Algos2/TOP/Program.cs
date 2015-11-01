@@ -12,7 +12,9 @@ namespace TOP
         static void Main()
         {
             SRM1076 s = new SRM1076();
-            s.decrypt("THEQUICKBROWNFOXJUMPSOVERTHELAZYHOG", "UIFRVJDLCSPXOGPYKVNQTPWFSUIFMBAZIPH", "DIDYOUNOTICESKIPPEDLETTER");
+            string rval = s.decrypt("THEQUICKBROWNFOXJUMPSOVERTHELAZYHOG", "UIFRVJDLCSPXOGPYKVNQTPWFSUIFMBAZIPH", "DIDYOUNOTICESKIPPEDLETTER");
+
+            Console.Write(rval);
         }
     }
 }

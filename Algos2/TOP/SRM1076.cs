@@ -29,19 +29,21 @@ namespace srm1076
 
             if(map.Count == 25)
             {
-                char aMiss;
-                char bMiss;
+                char aMiss = ' ';
+                char bMiss = ' ';
                 for(int i=0;i <26; i++)
                 {
                     if (!aMap[i])
                         aMiss = (char)(i + 'A');
 
                     if (!bMap[i])
-                        bMiss = (char)(i + 'B');
+                        bMiss = (char)(i + 'A');
 
 
                       
                 }
+
+                map.Add(bMiss, aMiss);
 
             }
 
@@ -52,7 +54,7 @@ namespace srm1076
                 if (!map.ContainsKey(y[i]))
                     return "";
 
-                output += map[y[i]];
+                output = string.Concat(output, map[y[i]]);
 
             }
 
@@ -64,3 +66,6 @@ namespace srm1076
 
     }
 }
+
+
+
