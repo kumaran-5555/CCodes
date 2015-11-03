@@ -210,3 +210,9 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+*.sln
+Algos2/LC_CS/LC_CS.csproj
+*.config
+Algos2/TOP/TOP.csproj
+Algos2/LC_CS/App.config
+*.config
