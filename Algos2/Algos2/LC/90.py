@@ -1,4 +1,4 @@
-class Solution(object):
+﻿class Solution(object):
 
 
     def _subsets2(self):

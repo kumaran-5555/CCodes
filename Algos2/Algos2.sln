@@ -10,6 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Algos2\LC\25.py = Algos2\LC\25.py
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LC_CS", "LC_CS\LC_CS.csproj", "{A2F6607C-C4D3-44FB-AAEF-BE9844BE6442}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TOP", "TOP\TOP.csproj", "{65E64941-FD34-4CFD-872F-9EE61C5556FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +22,14 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F9BD6AAC-1252-4787-A97D-7A00A3A0EE98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F9BD6AAC-1252-4787-A97D-7A00A3A0EE98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2F6607C-C4D3-44FB-AAEF-BE9844BE6442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2F6607C-C4D3-44FB-AAEF-BE9844BE6442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2F6607C-C4D3-44FB-AAEF-BE9844BE6442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2F6607C-C4D3-44FB-AAEF-BE9844BE6442}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65E64941-FD34-4CFD-872F-9EE61C5556FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65E64941-FD34-4CFD-872F-9EE61C5556FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65E64941-FD34-4CFD-872F-9EE61C5556FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65E64941-FD34-4CFD-872F-9EE61C5556FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

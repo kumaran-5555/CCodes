@@ -1,4 +1,4 @@
-class Solution(object):
+﻿class Solution(object):
     def numDecodings(self, s):
         """
         :type s: str
@@ -20,14 +20,36 @@ class Solution(object):
                 continue
 
             if i == 1:
-                # we can always decode one digit
-                dp[i] = 1
-                continue
+                if s[i-1] > 0:
+                    # we can always decode one digit
+                    dp[i] = 1
+                    continue
+                else:
+                    return 0
 
-            prev =  dp[i-1] if s[i-1] > 0 else 0
 
-            curr = dp[i-2] if s[i-1] <= 6 and s[i-2] <= 2 and s[i-2] > 0 else 0
+
+            if s[i-1] > 0:
+                prev =  dp[i-1]
+            else:
+                prev = 0
+
+            if s[i-2] > 0 and s[i-2] * 10 + s[i-1] > 0 and s[i-2] * 10 + s[i-1] <= 26:
+                if i == 2:
+                    curr = 1
+                else:
+                    curr = dp[i-2]
+            else:
+                curr = 0
+
+
+            
+            
             dp[i] = prev + curr
+            
+            if dp[i] == 0:
+                return 0
+
 
         return dp[n]
 
@@ -35,6 +57,6 @@ class Solution(object):
 
 if __name__ == '__main__':
     s = Solution()
-    s.numDecodings('2323')
+    s.numDecodings('232345')
 
 
