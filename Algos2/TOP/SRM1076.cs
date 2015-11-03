@@ -65,6 +65,109 @@ namespace srm1076
 
 
     }
+
+    class Tdetectived2
+    {
+        /// <summary>
+        /// dfs solution, recursively try
+        /// 
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        /// 
+
+
+        public int[] ans;
+        public string[] s;
+        public int n;
+        public bool[] visisted;
+   
+
+        private void _Reveal(int persionId, int[] sl, int depth)
+        {
+
+
+            this.ans[persionId] = Math.Min(this.ans[persionId], depth);
+
+            this.visisted[persionId] = true;
+            
+            int[] nsl = new int[this.n];
+            Array.Copy(sl, nsl, this.n);
+
+            int max = -1;
+            // update suspicious level
+            for(int i=0; i< this.n; i++)
+            {
+                nsl[i] = Math.Max(nsl[i], int.Parse(this.s[persionId][i].ToString()));
+                if(this.visisted[i] == false)
+                    max = Math.Max(max, nsl[i]);
+                                
+            }
+
+
+            if(max == -1)
+            {
+                // all of them are interviewed
+                this.visisted[persionId] = false;
+                return;
+
+            }
+
+            // recurisve call 
+            for(int i=0; i <this.n; i++)
+            {
+                if(this.visisted[i] == false && max == nsl[i])
+                {
+                    this._Reveal(i, nsl, depth+1);
+                }
+            }
+
+            this.visisted[persionId] = false;
+
+
+            return;
+
+
+
+
+
+
+        
+        }
+        public int reveal(string[] s)
+        {
+
+            this.n = s[0].Length;
+
+            this.ans = new int[n];
+            this.s = s;
+            this.visisted = new bool[this.n];
+            int[] sl = new int[this.n];
+            int rval = 0;
+            
+
+            for (int i = 0; i < this.n; i++)
+            {
+                visisted[i] = false;
+                sl[i] = 0;
+                ans[i] = n;
+            }
+
+
+            this._Reveal(0, sl, 0);
+
+
+            for(int i=1; i<this.n; i++)
+            {
+                rval += (this.ans[i] * i);
+            }
+
+
+            return rval;
+
+
+        }
+    }
 }
 
 

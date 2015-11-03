@@ -11,10 +11,10 @@ namespace TOP
     {
         static void Main()
         {
-            SRM1076 s = new SRM1076();
-            string rval = s.decrypt("THEQUICKBROWNFOXJUMPSOVERTHELAZYHOG", "UIFRVJDLCSPXOGPYKVNQTPWFSUIFMBAZIPH", "DIDYOUNOTICESKIPPEDLETTER");
 
-            Console.Write(rval);
+            Tdetectived2 s = new Tdetectived2();
+            s.reveal(new string[] { "064675511", "603525154", "430262731", "652030511", "726302420", "552020464", "517544052", "153126500", "141104200" });
+
         }
     }
 }
