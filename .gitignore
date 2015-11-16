@@ -216,3 +216,5 @@ Algos2/LC_CS/LC_CS.csproj
 Algos2/TOP/TOP.csproj
 Algos2/LC_CS/App.config
 *.config
+*.stackdump
+Algos2/TOP/TOP.csproj

@@ -13,7 +13,8 @@ class Drbalance
         int minus = 0;
         int rval = 0;
 
-        for(int i=0; i<s.Length; i++)
+        for (int i = 0; i < s.Length; i++)
+
         {
             if (s[i] == '+')
                 plus++;
@@ -68,6 +69,7 @@ class Drbalance
                     str[i] = '-';
                     rval -= 1;
                 }
+
             }
 
 
@@ -78,3 +80,42 @@ class Drbalance
 
     }
 }
+
+
+class Cdgame
+{
+    public int rescount(int[] a, int[] b)
+    {
+
+        HashSet<int> outcomes = new HashSet<int>();
+
+
+
+        int n = a.Length;
+
+        int sumA = 0, sumB = 0;
+        int i, j;
+        for (i=0; i< n; i++)
+        {
+            sumA += a[i];
+            sumB += b[i];
+        }
+
+        for (i = 0; i < n; i++)
+        {
+            for (j = 0; j < n; j++)
+            { 
+                var newA = sumA - a[i] + b[j];
+                var newB = sumB - b[j] + a[i];
+                outcomes.Add(newA * newB);
+
+            }
+
+        }
+
+        return outcomes.Count;
+
+    }
+}
+
+>>>>>>> origin/master
