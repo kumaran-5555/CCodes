@@ -13,7 +13,7 @@ namespace TOP
         {
 
             AnArray  s = new AnArray();
-            s.solveProblem(new int[] { 269, 154, 94, 221, 171, 154, 50, 210, 258, 358, 121, 159, 8, 47, 290, 125, 291, 293, 338, 248, 295, 160, 268, 227, 99, 4, 273 }, 360);
+            BearSlowlySorts.minMoves(new int[] { 50, 20, 30, 40, 10 });
 
         }
     }
