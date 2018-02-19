@@ -1,28 +1,58 @@
+
+
+def binarySearch(arr, val):
+    l = 0
+    h = len(arr)-1
+
+    while l < h:
+        m = (h-l)//2 + 1 + l
+
+        if arr[m] <  val:
+            l = m
+        else:
+            h = m-1
+
+    if arr[l] < val:
+        return l
+    else:
+        return -1
+
+
+
+
+
+
+            
+
+
+
+
 class Solution(object):
     def lengthOfLIS(self, nums):
         """
         :type nums: List[int]
         :rtype: int
         """
-        
-        nums = [(i, nums[i]) for i in range(len(nums))]
-        
         if len(nums) == 0:
             return 0
-        
-        nums = sorted(nums)        
-        lis = 1
-        lis_ = 1
-        prev = nums[0]
-        for i in range(1, len(nums)):
-            if nums[i][1] >= prev[1] and nums[i][0] > prev[0]:
-                lis_ += 1                
+
+        lis = []
+        lis.append(nums[0])
+
+        for n in nums[1:]:
+            i = binarySearch(lis, n)
+
+            if len(lis) > i+1:
+                lis[i+1] = n
             else:
-                lis = max(lis, lis_)
-                lis_ = 1
-                
-            prev = nums[i]
+                lis.append(n)
 
-        lis = max(lis, lis_)
+        return len(lis)
 
-        return lis
+                    
+        
+
+
+if __name__ == '__main__':
+    c = Solution()
+    print(c.lengthOfLIS([10, 9, 2, 5, 3, 7, 101, 18]))
